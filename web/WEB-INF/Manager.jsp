@@ -32,7 +32,7 @@
                         <td>${user.firstName}</td>
                         <td>${user.lastName}</td>
                         <c:choose>
-                                <c:when test="${user.getRole().getId() == 1}">
+                                <c:when test="${user.getRole().getRoleId() == 1}">
                                     <td>system admin</td>
                                 </c:when>
                                 <c:otherwise>
@@ -64,7 +64,7 @@
                 <select name="role">
                             <c:forEach var="role" items="${roles}" >
                                 <c:choose>
-                                    <c:when test="${role.getId() == 1}">
+                                    <c:when test="${role.getRoleId() == 1}">
                                         <option>system admin</option>
                                     </c:when>
                                     <c:otherwise>
@@ -87,7 +87,7 @@
                 Password: <input type="test" name="password" value=${selectedUser.password}><br>
                  Role: <select name="role">
                             <c:choose>
-                                <c:when test="${selectedUser.getRole().getId() == 1}">
+                                <c:when test="${selectedUser.getRole().getRoleId() == 1}">
                                     <option>system admin</option>
                                     <option>regular user</option>                              
                                 </c:when>

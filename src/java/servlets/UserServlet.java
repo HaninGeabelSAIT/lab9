@@ -38,7 +38,7 @@ public class UserServlet extends HttpServlet {
             roles = user_role.getAll();
             request.setAttribute("users", users);
             for (User user : users) {
-                id = user.getRole().getId();
+                id = user.getRole().getRoleId();
 
             }
             request.setAttribute("id", id);
@@ -69,8 +69,7 @@ if (action == null){
             try {
                 String email = request.getParameter("userEmail");
                 request.setAttribute("email", email);
-//                User DeletedUser = user_service.getUser(email);
-//                request.setAttribute("DeletedUser", DeletedUser);
+
                   user_service.delete(email);
                   response.sendRedirect("/");
                      
@@ -81,11 +80,7 @@ if (action == null){
             }
         }
 
-//        try{
-//           user_service.getAll();  
-//        }catch(SQLException) {
-//            System.out.println("there is an error"); 
-//        }
+
        
     }
 
